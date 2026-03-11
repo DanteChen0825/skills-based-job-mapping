@@ -278,3 +278,94 @@ tr:hover td { background: #f7fafc; }
   color: #718096;
   font-size: .82rem;
 }
+
+/* ── ESCO Occupations ────────────────────────────── */
+.esco-card {
+  border-top: 3px solid #3182ce;
+}
+.esco-link-header {
+  margin-left: auto;
+  font-size: .75rem;
+  font-weight: 500;
+  color: #3182ce;
+  text-decoration: none;
+}
+.esco-link-header:hover { text-decoration: underline; }
+
+.esco-list {
+  display: flex;
+  flex-direction: column;
+  gap: .85rem;
+}
+.esco-item {
+  background: #f7fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: .9rem 1.1rem;
+}
+.esco-item-header {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  margin-bottom: .45rem;
+  flex-wrap: wrap;
+}
+.esco-rank {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #3182ce;
+  color: white;
+  font-size: .72rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.esco-title {
+  font-weight: 600;
+  font-size: .93rem;
+  color: #1a202c;
+  flex: 1;
+}
+.conf-badge {
+  font-size: .7rem;
+  font-weight: 700;
+  padding: .18rem .55rem;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.conf-high   { background: #c6f6d5; color: #22543d; }
+.conf-medium { background: #feebc8; color: #7b341e; }
+.conf-low    { background: #fed7d7; color: #742a2a; }
+
+.esco-codes {
+  display: flex;
+  gap: .45rem;
+  margin-bottom: .4rem;
+  flex-wrap: wrap;
+}
+.esco-code-chip {
+  font-size: .72rem;
+  font-weight: 600;
+  background: #ebf4ff;
+  color: #2b6cb0;
+  border: 1px solid #bee3f8;
+  border-radius: 5px;
+  padding: .1rem .45rem;
+  font-family: monospace;
+}
+.isco-chip {
+  background: #f0fff4;
+  color: #276749;
+  border-color: #c6f6d5;
+}
+.esco-rationale {
+  font-size: .82rem;
+  color: #4a5568;
+  margin: 0;
+  line-height: 1.5;
+  font-style: italic;
+}

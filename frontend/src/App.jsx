@@ -49,6 +49,45 @@ function SkillsTable({ skills }) {
   )
 }
 
+const CONFIDENCE_CLASS = { High: 'conf-high', Medium: 'conf-medium', Low: 'conf-low' }
+
+function EscoOccupations({ occupations }) {
+  if (!occupations || occupations.length === 0) return null
+  return (
+    <div className="card esco-card">
+      <div className="card-title">
+        Closest ESCO Occupations
+        <a
+          className="esco-link-header"
+          href="https://esco.ec.europa.eu/en/classification/occupation_main"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          ↗ ESCO Classification
+        </a>
+      </div>
+      <div className="esco-list">
+        {occupations.map((o, i) => (
+          <div key={i} className="esco-item">
+            <div className="esco-item-header">
+              <span className="esco-rank">{i + 1}</span>
+              <span className="esco-title">{o.occupation_title}</span>
+              <span className={`conf-badge ${CONFIDENCE_CLASS[o.match_confidence] ?? ''}`}>
+                {o.match_confidence}
+              </span>
+            </div>
+            <div className="esco-codes">
+              <span className="esco-code-chip">ESCO {o.esco_code}</span>
+              <span className="esco-code-chip isco-chip">ISCO-08 {o.isco_code}</span>
+            </div>
+            <p className="esco-rationale">{o.rationale}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 function App() {
   const [form, setForm] = useState({
     business_unit: '',
@@ -201,6 +240,10 @@ function App() {
 
           <SkillsTable skills={result.skills ?? []} />
         </div>
+      )}
+
+      {result && (
+        <EscoOccupations occupations={result.esco_occupations} />
       )}
     </div>
   )

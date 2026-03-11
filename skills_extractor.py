@@ -24,6 +24,11 @@ Rules:
 - Minimum 8 skills per record; capture all meaningful skills present.
 - evidence must be a direct quote or close paraphrase from the JD, under 20 words.
 - If the job description is empty or too short, return the error JSON shown below.
+- Always include an "esco_occupations" array with 2–3 of the closest matching ESCO occupations
+  based on the inferred job title, seniority level, and extracted skills.
+  Use the ESCO classification at https://esco.ec.europa.eu/en/classification/occupation_main.
+  Provide the ESCO occupation code (decimal, e.g. "2152.1") and the underlying ISCO-08 4-digit code.
+  Rate match_confidence as High, Medium, or Low.
 
 Proficiency scale:
   1 – Awareness    : "desirable", "exposure to", "familiar with"
@@ -55,6 +60,15 @@ Output schema for a successful record:
       "category": "<one of the 8 categories>",
       "proficiency_required": <1–5>,
       "evidence": "<short quote from JD>"
+    }
+  ],
+  "esco_occupations": [
+    {
+      "occupation_title": "<ESCO occupation title>",
+      "esco_code": "<ESCO occupation code, e.g. 2152.1>",
+      "isco_code": "<4-digit ISCO-08 code>",
+      "match_confidence": "<High | Medium | Low>",
+      "rationale": "<one sentence explaining why this occupation matches>"
     }
   ]
 }

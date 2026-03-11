@@ -39,6 +39,13 @@ Your task is to **analyse the job description and extract a structured set of sk
    - Language like "significant experience", "proven track record", "expert knowledge", "minimum HNC", "qualified accountant"
    - Responsibility scope (leading teams vs. supporting tasks)
 
+6. After extracting skills, identify the **2–3 closest ESCO occupations** from the [ESCO classification](https://esco.ec.europa.eu/en/classification/occupation_main) that best match the inferred job title, seniority level, and extracted skill set. For each ESCO occupation provide:
+   - `occupation_title` — the official ESCO occupation name
+   - `esco_code` — the ESCO occupation code (decimal, e.g. `2152.1`)
+   - `isco_code` — the underlying 4-digit ISCO-08 code
+   - `match_confidence` — `High`, `Medium`, or `Low`
+   - `rationale` — one sentence explaining why this occupation matches
+
 ---
 
 ## Output Format
@@ -58,6 +65,15 @@ Return the results as a structured JSON object. Use the exact schema below:
       "category": "<one of the 8 categories above>",
       "proficiency_required": <1–5>,
       "evidence": "<short quote or phrase from the JD that supports this skill and level>"
+    }
+  ],
+  "esco_occupations": [
+    {
+      "occupation_title": "<ESCO occupation title>",
+      "esco_code": "<ESCO occupation code, e.g. 2152.1>",
+      "isco_code": "<4-digit ISCO-08 code>",
+      "match_confidence": "<High | Medium | Low>",
+      "rationale": "<one sentence explaining why this occupation matches>"
     }
   ]
 }
@@ -161,6 +177,29 @@ Job Description: Customer Service Advisor ... A passion for delivering great cus
       "category": "Analytical & Problem-Solving Skills",
       "proficiency_required": 1,
       "evidence": "Spot opportunities to improve customer experiences and suggest ways to make things better"
+    }
+  ],
+  "esco_occupations": [
+    {
+      "occupation_title": "Contact centre information clerk",
+      "esco_code": "4222.1",
+      "isco_code": "4222",
+      "match_confidence": "High",
+      "rationale": "Role involves handling multi-channel customer enquiries and resolving queries via phone, email, and online portals."
+    },
+    {
+      "occupation_title": "Customer service representative",
+      "esco_code": "5244.1",
+      "isco_code": "5244",
+      "match_confidence": "High",
+      "rationale": "Entry-level customer-facing role focused on service delivery, complaint handling, and maintaining customer satisfaction."
+    },
+    {
+      "occupation_title": "Client information worker",
+      "esco_code": "4224.1",
+      "isco_code": "4224",
+      "match_confidence": "Medium",
+      "rationale": "Shares responsibilities around providing information and support to customers across multiple channels."
     }
   ]
 }
