@@ -1,17 +1,21 @@
 """
-Approach 2 – Embedding-Based Matching with ESCO Catalogue
-===========================================================
-1. Fetches a seed set of skills from the ESCO API (EU reference taxonomy).
-2. Uses Claude (via Bedrock) to embed both skills and job description chunks.
-   (Since Bedrock Titan Embeddings or Cohere are not assumed available, we use
-    Claude to score relevance in batches — a lightweight proxy for embeddings.)
-3. Uses TF-IDF + cosine similarity as the actual vector matching layer so the
-   script runs with zero additional AWS costs beyond the Claude calls for
-   level/importance assignment.
-4. For each matched skill, calls Claude once to assign proficiency level and
-   importance, and to confirm or reject the match.
+Approach 2 – Embedding-Based Matching with ESCO Catalogue  (Statistical Edition)
+==================================================================================
+Pipeline:
+  1. Fetch ESCO skill catalogue from EU API (or built-in seed if offline)
+  2. Build TF-IDF index over skill titles + descriptions
+  3. For each JD: retrieve top-K candidates by cosine similarity
+  4. Claude validates candidates → confirms skill, assigns proficiency + importance
+  5. Optionally enrich confirmed skills with full ESCO detail (skill_type, reuse_level)
 
-Output: approach2_results.json  (and a summary CSV)
+Statistical outputs added:
+  - Per-role: candidates_retrieved, confirmed, acceptance_rate, cosine score stats
+  - Cross-run: printed summary table — min/mean/max cosine, acceptance rate per role
+  - approach2_stats.csv — machine-readable statistics file
+
+Output:
+  approach2_results_test.json / approach2_results_test.csv
+  approach2_stats_test.csv
 
 Run:
     python approach2_embedding_matching.py
@@ -20,6 +24,7 @@ Run:
 import json
 import re
 import time
+import statistics
 import requests
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -28,14 +33,15 @@ from sklearn.metrics.pairwise import cosine_similarity
 from bedrock_client import invoke_claude
 
 # ── Configuration ──────────────────────────────────────────────────────────────
-TEST_MODE         = True              # ← True = process 10 records only; False = process all
+TEST_MODE         = True              # ← True = process TEST_LIMIT records; False = all
 
 EXCEL_FILE        = "050326 SR Job Description Details LE.xlsx"
-OUTPUT_CSV        = "approach2_results_test.csv" if TEST_MODE else "approach2_results_full.csv"
+OUTPUT_CSV        = "approach2_results_test.csv"  if TEST_MODE else "approach2_results_full.csv"
 OUTPUT_JSON       = "approach2_results_test.json" if TEST_MODE else "approach2_results_full.json"
-TEST_LIMIT        = 3
-TOP_K_SKILLS      = 15          # Number of top ESCO skills to surface per role
-ESCO_SKILLS_LIMIT = 500         # How many ESCO skills to pull from the API
+STATS_CSV         = "approach2_stats_test.csv"    if TEST_MODE else "approach2_stats_full.csv"
+TEST_LIMIT        = 5           # ← number of records in TEST_MODE
+TOP_K_SKILLS      = 15          # candidates retrieved per JD from TF-IDF
+ESCO_SKILLS_LIMIT = 500         # how many ESCO skills to pull from the API
 ESCO_API_BASE     = "https://esco.ec.europa.eu/api"
 ESCO_LANGUAGE     = "en"
 # ───────────────────────────────────────────────────────────────────────────────
@@ -52,7 +58,7 @@ For each skill, decide:
 1. Is it genuinely relevant to this role? (true/false)
 2. If relevant, what proficiency level is required? ["Awareness", "Working", "Practitioner", "Expert"]
 3. If relevant, what is its importance? ["Core", "Important", "Nice to Have"]
-4. Provide a short evidence quote from the JD.
+4. Provide a short evidence quote (≤20 words) from the JD.
 
 Return a JSON object with key "skills" — an array. Only include skills where "relevant" is true.
 
@@ -66,11 +72,12 @@ Each item:
 }}
 
 Job Title: {job_title}
+Business Function: {function}
 
 Job Description (excerpt):
 {job_description}
 
-Candidate skills from ESCO:
+Candidate skills from ESCO (title | URI | cosine similarity | description):
 {candidate_skills}
 """
 
@@ -264,42 +271,62 @@ def extract_json(text: str) -> dict:
 # ── Per-role processing ────────────────────────────────────────────────────────
 
 def process_row(row: pd.Series, skills: list[dict], vectorizer, matrix) -> dict:
-    job_ref   = row["Job Ref ID"]
-    job_title = row["Job Title"]
-    job_status= row["Job Status"]
-    jd_text   = str(row["Default Job Ad Job Description"] or "").strip()
+    job_ref       = row["Job Ref ID"]
+    job_title     = row["Job Title"]
+    job_status    = row["Job Status"]
+    function_     = str(row.get("Function", "") or "")
+    sub_function  = str(row.get("Sub-function", "") or "")
+    business_unit = str(row.get("Business unit", "") or "")
+    jd_text       = str(row["Default Job Ad Job Description"] or "").strip()
 
     print(f"  [{job_ref}] {job_title} ...", end=" ", flush=True)
 
     if not jd_text or jd_text.lower() == "nan":
         print("SKIPPED (no JD)")
-        return {"job_ref_id": job_ref, "job_title": job_title,
-                "job_status": job_status, "skills": [],
-                "error": "No job description text"}
+        return {
+            "job_ref_id": job_ref, "job_title": job_title,
+            "job_status": job_status, "function": function_,
+            "sub_function": sub_function, "business_unit": business_unit,
+            "skills": [], "error": "No job description text",
+            "candidates_retrieved": 0, "candidates": [],
+            "stats": {},
+        }
 
     # Step 1a — TF-IDF retrieval from the bulk catalogue
     tfidf_candidates = retrieve_top_k(jd_text, skills, vectorizer, matrix, k=TOP_K_SKILLS)
 
     # Step 1b — additionally query ESCO /search with the job title for domain-specific skills
-    #           (uses searchGet / searchQuickMode with text=<job_title>)
     api_candidates = fetch_esco_skills_for_query(job_title, limit=10)
 
     # Merge and deduplicate by URI
-    seen_uris  = {c["uri"] for c in tfidf_candidates}
+    seen_uris      = {c["uri"] for c in tfidf_candidates}
     all_candidates = list(tfidf_candidates)
     for c in api_candidates:
         if c["uri"] and c["uri"] not in seen_uris:
+            c.setdefault("similarity_score", 0.0)
             all_candidates.append(c)
             seen_uris.add(c["uri"])
 
+    # ── Cosine score statistics for this role ──────────────────────────────────
+    cosine_scores = [c.get("similarity_score", 0.0) for c in all_candidates if c.get("similarity_score") is not None]
+    score_stats = {
+        "n_candidates": len(all_candidates),
+        "cosine_min":   round(min(cosine_scores), 4)  if cosine_scores else 0,
+        "cosine_max":   round(max(cosine_scores), 4)  if cosine_scores else 0,
+        "cosine_mean":  round(statistics.mean(cosine_scores), 4)   if cosine_scores else 0,
+        "cosine_median":round(statistics.median(cosine_scores), 4) if cosine_scores else 0,
+        "cosine_stdev": round(statistics.stdev(cosine_scores), 4)  if len(cosine_scores) > 1 else 0,
+    }
+
     candidate_list = "\n".join(
-        f"- {c['title']} (URI: {c['uri']}): {c['description']}"
+        f"- {c['title']} | {c['uri']} | sim={c.get('similarity_score', 0):.3f} | {c['description']}"
         for c in all_candidates
     )
 
     # Step 2 — ask Claude to validate and enrich
     prompt = ENRICHMENT_PROMPT.format(
         job_title=job_title,
+        function=f"{function_} / {sub_function}".strip(" /"),
         job_description=jd_text[:5000],
         candidate_skills=candidate_list,
     )
@@ -309,8 +336,7 @@ def process_row(row: pd.Series, skills: list[dict], vectorizer, matrix) -> dict:
         parsed  = extract_json(raw)
         matched = parsed.get("skills", [])
 
-        # Step 3 — optionally enrich each confirmed skill with full ESCO detail
-        #          (resourceSkillGet: GET /resource/skill?uri=<uri>)
+        # Step 3 — enrich each confirmed skill with full ESCO detail
         for skill in matched:
             uri = skill.get("esco_uri", "")
             if uri and uri.startswith("http"):
@@ -318,31 +344,60 @@ def process_row(row: pd.Series, skills: list[dict], vectorizer, matrix) -> dict:
                 skill["skill_type"]  = detail.get("skill_type", "")
                 skill["reuse_level"] = detail.get("reuse_level", "")
 
-        print(f"OK ({len(matched)} skills confirmed, {len(all_candidates)} candidates)")
+        n_confirmed    = len(matched)
+        acceptance_rate= round(n_confirmed / max(len(all_candidates), 1), 4)
+
+        # Add acceptance rate to stats
+        score_stats["n_confirmed"]      = n_confirmed
+        score_stats["acceptance_rate"]  = acceptance_rate
+
+        print(
+            f"OK  candidates={len(all_candidates)}  confirmed={n_confirmed}"
+            f"  accept={acceptance_rate:.0%}"
+            f"  cosine_mean={score_stats['cosine_mean']:.3f}"
+        )
         return {
-            "job_ref_id":            job_ref,
-            "job_title":             job_title,
-            "job_status":            job_status,
-            "skills":                matched,
-            "candidates_retrieved":  len(all_candidates),
+            "job_ref_id":           job_ref,
+            "job_title":            job_title,
+            "job_status":           job_status,
+            "function":             function_,
+            "sub_function":         sub_function,
+            "business_unit":        business_unit,
+            "skills":               matched,
+            "candidates_retrieved": len(all_candidates),
+            "candidates":           all_candidates,   # kept for frontend stats view
+            "stats":                score_stats,
         }
     except json.JSONDecodeError as e:
         print(f"JSON PARSE ERROR: {e}")
-        return {"job_ref_id": job_ref, "job_title": job_title,
-                "job_status": job_status, "skills": [],
-                "error": f"JSON parse error: {e}"}
+        score_stats.update({"n_confirmed": 0, "acceptance_rate": 0})
+        return {
+            "job_ref_id": job_ref, "job_title": job_title,
+            "job_status": job_status, "function": function_,
+            "sub_function": sub_function, "business_unit": business_unit,
+            "skills": [], "error": f"JSON parse error: {e}",
+            "candidates_retrieved": len(all_candidates), "candidates": all_candidates,
+            "stats": score_stats,
+        }
     except Exception as e:
         print(f"ERROR: {e}")
-        return {"job_ref_id": job_ref, "job_title": job_title,
-                "job_status": job_status, "skills": [], "error": str(e)}
+        score_stats.update({"n_confirmed": 0, "acceptance_rate": 0})
+        return {
+            "job_ref_id": job_ref, "job_title": job_title,
+            "job_status": job_status, "function": function_,
+            "sub_function": sub_function, "business_unit": business_unit,
+            "skills": [], "error": str(e),
+            "candidates_retrieved": len(all_candidates), "candidates": all_candidates,
+            "stats": score_stats,
+        }
 
 
 # ── Main ───────────────────────────────────────────────────────────────────────
 
 def main():
-    print(f"\n{'='*60}")
-    print("  Approach 2 – Embedding-Based Matching (TF-IDF + ESCO)")
-    print(f"{'='*60}\n")
+    print(f"\n{'='*70}")
+    print("  Approach 2 – Embedding-Based Matching (TF-IDF + ESCO)  [Statistical]")
+    print(f"{'='*70}\n")
 
     # Load ESCO catalogue
     print("Step 1: Load ESCO skill catalogue")
@@ -365,17 +420,53 @@ def main():
 
     # Process each role
     print("Step 4: Match and enrich skills per role")
+    print(f"  {'Role':<45} {'Cands':>6} {'Conf':>5} {'Accept':>7} {'CosMean':>8}")
+    print(f"  {'-'*45} {'-'*6} {'-'*5} {'-'*7} {'-'*8}")
     results = []
     for _, row in df.iterrows():
         result = process_row(row, esco_skills, vectorizer, matrix)
         results.append(result)
 
+    # ── Statistical summary table ──────────────────────────────────────────────
+    print(f"\n{'='*70}")
+    print("  Statistical Summary")
+    print(f"{'='*70}")
+    print(f"  {'Role':<40} {'Cands':>6} {'Conf':>5} {'Accept%':>8} {'CosMean':>8} {'CosMin':>7} {'CosMax':>7}")
+    print(f"  {'-'*40} {'-'*6} {'-'*5} {'-'*8} {'-'*8} {'-'*7} {'-'*7}")
+
+    all_cosines     = []
+    all_acceptances = []
+    for r in results:
+        s = r.get("stats", {})
+        nc = s.get("n_candidates", r.get("candidates_retrieved", 0))
+        nk = s.get("n_confirmed",  len(r.get("skills", [])))
+        ar = s.get("acceptance_rate", 0)
+        cm = s.get("cosine_mean", 0)
+        cmin= s.get("cosine_min", 0)
+        cmax= s.get("cosine_max", 0)
+        print(f"  {r['job_title'][:40]:<40} {nc:>6} {nk:>5} {ar:>8.0%} {cm:>8.3f} {cmin:>7.3f} {cmax:>7.3f}")
+        all_cosines.extend([c.get("similarity_score", 0) for c in r.get("candidates", [])])
+        if ar > 0:
+            all_acceptances.append(ar)
+
+    print(f"\n  {'OVERALL':}")
+    if all_cosines:
+        print(f"    Cosine scores  — min={min(all_cosines):.3f}  mean={statistics.mean(all_cosines):.3f}"
+              f"  median={statistics.median(all_cosines):.3f}  max={max(all_cosines):.3f}"
+              f"  n={len(all_cosines)}")
+    if all_acceptances:
+        print(f"    Acceptance rate — min={min(all_acceptances):.0%}  mean={statistics.mean(all_acceptances):.0%}"
+              f"  max={max(all_acceptances):.0%}")
+    total_skills = sum(len(r.get("skills", [])) for r in results)
+    print(f"    Roles processed: {len(results)}   Skills confirmed: {total_skills}")
+    print(f"{'='*70}\n")
+
     # Save JSON
     with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
-    print(f"\n✅ JSON saved to: {OUTPUT_JSON}")
+    print(f"✅ JSON saved to: {OUTPUT_JSON}")
 
-    # Flatten to CSV
+    # Flatten to skills CSV
     rows_flat = []
     for role in results:
         if role.get("skills"):
@@ -384,6 +475,9 @@ def main():
                     "job_ref_id":        role["job_ref_id"],
                     "job_title":         role["job_title"],
                     "job_status":        role["job_status"],
+                    "function":          role.get("function", ""),
+                    "sub_function":      role.get("sub_function", ""),
+                    "business_unit":     role.get("business_unit", ""),
                     "skill_name":        skill.get("skill_name", ""),
                     "esco_uri":          skill.get("esco_uri", ""),
                     "skill_type":        skill.get("skill_type", ""),
@@ -404,8 +498,27 @@ def main():
     df_out.to_csv(OUTPUT_CSV, index=False, encoding="utf-8")
     print(f"✅ CSV  saved to: {OUTPUT_CSV}")
 
-    total_skills = sum(len(r.get("skills", [])) for r in results)
-    print(f"\n📊 Summary: {len(results)} roles processed, {total_skills} skills confirmed from ESCO catalogue")
+    # Save stats CSV
+    stats_rows = []
+    for r in results:
+        s = r.get("stats", {})
+        stats_rows.append({
+            "job_ref_id":       r["job_ref_id"],
+            "job_title":        r["job_title"],
+            "job_status":       r["job_status"],
+            "function":         r.get("function", ""),
+            "candidates":       s.get("n_candidates", 0),
+            "confirmed":        s.get("n_confirmed",  len(r.get("skills", []))),
+            "acceptance_rate":  s.get("acceptance_rate", 0),
+            "cosine_min":       s.get("cosine_min",  0),
+            "cosine_max":       s.get("cosine_max",  0),
+            "cosine_mean":      s.get("cosine_mean", 0),
+            "cosine_median":    s.get("cosine_median", 0),
+            "cosine_stdev":     s.get("cosine_stdev", 0),
+            "error":            r.get("error", ""),
+        })
+    pd.DataFrame(stats_rows).to_csv(STATS_CSV, index=False, encoding="utf-8")
+    print(f"✅ Stats CSV saved to: {STATS_CSV}")
 
 
 if __name__ == "__main__":
