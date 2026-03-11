@@ -1,0 +1,576 @@
+[
+  {
+    "job_ref_id": 31961,
+    "job_title": "Customer Service Advisor",
+    "job_status": "FILLED",
+    "skills": [
+      {
+        "skill_name": "Customer Service",
+        "category": "Domain",
+        "proficiency_level": "Working",
+        "importance": "Core",
+        "evidence": "A passion for delivering great customer service — no experience needed, just a willingness to learn!"
+      },
+      {
+        "skill_name": "Verbal Communication",
+        "category": "Soft",
+        "proficiency_level": "Working",
+        "importance": "Core",
+        "evidence": "Strong communication skills — you'll be speaking, listening, and writing with confidence."
+      },
+      {
+        "skill_name": "Written Communication",
+        "category": "Soft",
+        "proficiency_level": "Working",
+        "importance": "Core",
+        "evidence": "Strong communication skills — you'll be speaking, listening, and writing with confidence."
+      },
+      {
+        "skill_name": "Active Listening",
+        "category": "Soft",
+        "proficiency_level": "Working",
+        "importance": "Core",
+        "evidence": "you'll be speaking, listening, and writing with confidence."
+      },
+      {
+        "skill_name": "Problem Solving",
+        "category": "Soft",
+        "proficiency_level": "Working",
+        "importance": "Core",
+        "evidence": "A problem-solver who thrives in a fast-moving environment."
+      },
+      {
+        "skill_name": "Teamwork and Collaboration",
+        "category": "Soft",
+        "proficiency_level": "Working",
+        "importance": "Core",
+        "evidence": "A team player who's eager to support colleagues and share ideas."
+      },
+      {
+        "skill_name": "Multi-channel Customer Support",
+        "category": "Domain",
+        "proficiency_level": "Working",
+        "importance": "Core",
+        "evidence": "Provide outstanding support to our customers via phone, email, LiveChat, and online portals."
+      },
+      {
+        "skill_name": "Query Resolution",
+        "category": "Domain",
+        "proficiency_level": "Working",
+        "importance": "Core",
+        "evidence": "Take ownership of customer queries, resolving issues efficiently and professionally."
+      },
+      {
+        "skill_name": "IT Systems Proficiency",
+        "category": "Technical",
+        "proficiency_level": "Awareness",
+        "importance": "Important",
+        "evidence": "Comfortable using IT systems and navigating multiple platforms."
+      },
+      {
+        "skill_name": "Live Chat Support",
+        "category": "Tool/System",
+        "proficiency_level": "Awareness",
+        "importance": "Important",
+        "evidence": "Provide outstanding support to our customers via phone, email, LiveChat, and online portals."
+      },
+      {
+        "skill_name": "Online Portal Navigation",
+        "category": "Tool/System",
+        "proficiency_level": "Awareness",
+        "importance": "Important",
+        "evidence": "Comfortable using IT systems and navigating multiple platforms."
+      },
+      {
+        "skill_name": "Continuous Improvement",
+        "category": "Soft",
+        "proficiency_level": "Awareness",
+        "importance": "Important",
+        "evidence": "Spot opportunities to improve customer experiences and suggest ways to make things better."
+      },
+      {
+        "skill_name": "Initiative and Ownership",
+        "category": "Soft",
+        "proficiency_level": "Working",
+        "importance": "Core",
+        "evidence": "Take ownership of customer queries, resolving issues efficiently and professionally."
+      },
+      {
+        "skill_name": "Adaptability",
+        "category": "Soft",
+        "proficiency_level": "Working",
+        "importance": "Important",
+        "evidence": "A problem-solver who thrives in a fast-moving environment."
+      },
+      {
+        "skill_name": "Cross-functional Collaboration",
+        "category": "Soft",
+        "proficiency_level": "Working",
+        "importance": "Important",
+        "evidence": "Collaborate with colleagues across teams to find the best solutions."
+      },
+      {
+        "skill_name": "Energy Industry Knowledge",
+        "category": "Domain",
+        "proficiency_level": "Awareness",
+        "importance": "Nice to Have",
+        "evidence": "Be part of a company committed to sustainability and a greener future."
+      },
+      {
+        "skill_name": "Willingness to Learn",
+        "category": "Soft",
+        "proficiency_level": "Awareness",
+        "importance": "Core",
+        "evidence": "no experience needed, just a willingness to learn!"
+      }
+    ]
+  },
+  {
+    "job_ref_id": 31946,
+    "job_title": "Field Engineer - CI/BOP",
+    "job_status": "CANCELLED",
+    "skills": [
+      {
+        "skill_name": "Mechanical Engineering",
+        "category": "Domain",
+        "proficiency_level": "Practitioner",
+        "importance": "Core",
+        "evidence": "We are looking for a candidate with a Mechanical Engineering qualification or equivalent vocational training"
+      },
+      {
+        "skill_name": "Turbine Assembly & Installation",
+        "category": "Domain",
+        "proficiency_level": "Practitioner",
+        "importance": "Core",
+        "evidence": "significant industry experience, especially within turbines... assembly of turbines, generators, pumps, valves, and heat exchangers"
+      },
+      {
+        "skill_name": "Rotating Equipment Knowledge",
+        "category": "Domain",
+        "proficiency_level": "Practitioner",
+        "importance": "Core",
+        "evidence": "construction, installation, and assembly of mechanical equipment, including static and rotating equipment"
+      },
+      {
+        "skill_name": "Welding Processes",
+        "category": "Domain",
+        "proficiency_level": "Practitioner",
+        "importance": "Core",
+        "evidence": "individuals with welding qualifications and extensive hands-on experience will also be considered... piping, pipe supports, and welding processes"
+      },
+      {
+        "skill_name": "Pipework Installation",
+        "category": "Domain",
+        "proficiency_level": "Practitioner",
+        "importance": "Core",
+        "evidence": "You will have knowledge of pipework installation, tank and vessel installation, steelwork erection"
+      },
+      {
+        "skill_name": "Tank and Vessel Installation",
+        "category": "Domain",
+        "proficiency_level": "Working",
+        "importance": "Core",
+        "evidence": "knowledge of pipework installation, tank and vessel installation, steelwork erection"
+      },
+      {
+        "skill_name": "Steelwork Erection",
+        "category": "Domain",
+        "proficiency_level": "Working",
+        "importance": "Core",
+        "evidence": "knowledge of pipework installation, tank and vessel installation, steelwork erection"
+      },
+      {
+        "skill_name": "HVAC Installation",
+        "category": "Domain",
+        "proficiency_level": "Working",
+        "importance": "Important",
+        "evidence": "HVAC installation, and the assembly of turbines, generators, pumps, valves, and heat exchangers"
+      },
+      {
+        "skill_name": "Alignment Checks",
+        "category": "Domain",
+        "proficiency_level": "Working",
+        "importance": "Important",
+        "evidence": "Additional expertise in alignment checks, torque control, joint integrity inspections"
+      },
+      {
+        "skill_name": "Torque Control",
+        "category": "Domain",
+        "proficiency_level": "Working",
+        "importance": "Important",
+        "evidence": "Additional expertise in alignment checks, torque control, joint integrity inspections"
+      },
+      {
+        "skill_name": "Joint Integrity Inspections",
+        "category": "Domain",
+        "proficiency_level": "Working",
+        "importance": "Important",
+        "evidence": "alignment checks, torque control, joint integrity inspections, and Foreign Material Exclusion (FME) processes is highly desirable"
+      },
+      {
+        "skill_name": "Foreign Material Exclusion (FME)",
+        "category": "Domain",
+        "proficiency_level": "Working",
+        "importance": "Important",
+        "evidence": "Foreign Material Exclusion (FME) processes is highly desirable"
+      },
+      {
+        "skill_name": "Quality Assurance / Quality Control (QA/QC)",
+        "category": "Domain",
+        "proficiency_level": "Practitioner",
+        "importance": "Core",
+        "evidence": "Familiarity with QA/QC procedures, including punch list inspections, NCRs, and ITPs, will be advantageous"
+      },
+      {
+        "skill_name": "Non-Conformance Reporting (NCR)",
+        "category": "Domain",
+        "proficiency_level": "Working",
+        "importance": "Core",
+        "evidence": "assisting in the issuance of non-conformance reports when required"
+      },
+      {
+        "skill_name": "Inspection Test Plans (ITP)",
+        "category": "Domain",
+        "proficiency_level": "Working",
+        "importance": "Important",
+        "evidence": "Familiarity with QA/QC procedures, including punch list inspections, NCRs, and ITPs"
+      },
+      {
+        "skill_name": "Punch List Inspections",
+        "category": "Domain",
+        "proficiency_level": "Working",
+        "importance": "Important",
+        "evidence": "Familiarity with QA/QC procedures, including punch list inspections, NCRs, and ITPs"
+      },
+      {
+        "skill_name": "Quality Control Plans",
+        "category": "Domain",
+        "proficiency_level": "Practitioner",
+        "importance": "Core",
+        "evidence": "maintaining a strong understanding of contractual technical requirements, construction drawings, Quality Control Plans, and Quality Inspection Records"
+      },
+      {
+        "skill_name": "Construction Surveillance",
+        "category": "Domain",
+        "proficiency_level": "Practitioner",
+        "importance": "Core",
+        "evidence": "monitor and oversee construction activities carried out by a contractor... ensure adherence to NNB's surveillance strategy requirements"
+      },
+      {
+        "skill_name": "Construction Drawing Interpretation",
+        "category": "Technical",
+        "proficiency_level": "Practitioner",
+        "importance": "Core",
+        "evidence": "maintaining a strong understanding of contractual technical requirements, construction drawings, Quality Control Plans"
+      },
+      {
+        "skill_name": "Health & Safety Compliance",
+        "category": "Compliance/Regulatory",
+        "proficiency_level": "Practitioner",
+        "importance": "Core",
+        "evidence": "adherence to company policies, procedures, and protocols for construction, health & safety, and quality assurance"
+      },
+      {
+        "skill_name": "Environmental Standards Compliance",
+        "category": "Compliance/Regulatory",
+        "proficiency_level": "Working",
+        "importance": "Core",
+        "evidence": "ensure all tasks meet health, safety, and environmental standards"
+      },
+      {
+        "skill_name": "ISO 9001",
+        "category": "Compliance/Regulatory",
+        "proficiency_level": "Working",
+        "importance": "Important",
+        "evidence": "knowledge of key industry specifications such as BTS, BST, ISO9001, and GQAS"
+      },
+      {
+        "skill_name": "Nuclear Industry Standards (BTS/BST/GQAS)",
+        "category": "Compliance/Regulatory",
+        "proficiency_level": "Working",
+        "importance": "Important",
+        "evidence": "knowledge of key industry specifications such as BTS, BST, ISO9001, and GQAS"
+      },
+      {
+        "skill_name": "Materials Knowledge",
+        "category": "Domain",
+        "proficiency_level": "Practitioner",
+        "importance": "Core",
+        "evidence": "A strong understanding of materials, trade methods, and legal requirements is essential"
+      },
+      {
+        "skill_name": "Legal & Regulatory Requirements Awareness",
+        "category": "Compliance/Regulatory",
+        "proficiency_level": "Working",
+        "importance": "Core",
+        "evidence": "A strong understanding of materials, trade methods, and legal requirements is essential"
+      },
+      {
+        "skill_name": "Stakeholder Engagement",
+        "category": "Soft",
+        "proficiency_level": "Practitioner",
+        "importance": "Core",
+        "evidence": "Do you have excellent communication and stakeholder engagement skills... establish productive working relationships with contractors and stakeholders"
+      },
+      {
+        "skill_name": "Communication",
+        "category": "Soft",
+        "proficiency_level": "Practitioner",
+        "importance": "Core",
+        "evidence": "The role requires excellent organisational and communication skills"
+      },
+      {
+        "skill_name": "Organisational Skills",
+        "category": "Soft",
+        "proficiency_level": "Practitioner",
+        "importance": "Core",
+        "evidence": "The role requires excellent organisational and communication skills"
+      },
+      {
+        "skill_name": "Attention to Detail",
+        "category": "Soft",
+        "proficiency_level": "Practitioner",
+        "importance": "Core",
+        "evidence": "A keen attention to detail is necessary when inspecting work, equipment, and materials"
+      },
+      {
+        "skill_name": "Teamwork & Collaboration",
+        "category": "Soft",
+        "proficiency_level": "Practitioner",
+        "importance": "Core",
+        "evidence": "Must be able to work effectively within a high-performing team that consistently exceeds expectations"
+      },
+      {
+        "skill_name": "Process Improvement",
+        "category": "Soft",
+        "proficiency_level": "Working",
+        "importance": "Nice to Have",
+        "evidence": "you will also have the opportunity to suggest improvements to existing processes to enhance overall project efficiency"
+      },
+      {
+        "skill_name": "Reporting & Documentation",
+        "category": "Technical",
+        "proficiency_level": "Working",
+        "importance": "Core",
+        "evidence": "provide input on site-wide management issues... monitoring and reporting responsibilities"
+      },
+      {
+        "skill_name": "Contractor Management",
+        "category": "Domain",
+        "proficiency_level": "Working",
+        "importance": "Important",
+        "evidence": "monitor and oversee construction activities carried out by a contractor... establish productive working relationships with contractors"
+      },
+      {
+        "skill_name": "Microsoft Outlook",
+        "category": "Tool/System",
+        "proficiency_level": "Working",
+        "importance": "Important",
+        "evidence": "Proficiency in Outlook, Excel, SharePoint, Teams, and PowerPoint is also required"
+      },
+      {
+        "skill_name": "Microsoft Excel",
+        "category": "Tool/System",
+        "proficiency_level": "Working",
+        "importance": "Important",
+        "evidence": "Proficiency in Outlook, Excel, SharePoint, Teams, and PowerPoint is also required"
+      },
+      {
+        "skill_name": "Microsoft SharePoint",
+        "category": "Tool/System",
+        "proficiency_level": "Working",
+        "importance": "Important",
+        "evidence": "Proficiency in Outlook, Excel, SharePoint, Teams, and PowerPoint is also required"
+      },
+      {
+        "skill_name": "Microsoft Teams",
+        "category": "Tool/System",
+        "proficiency_level": "Working",
+        "importance": "Important",
+        "evidence": "Proficiency in Outlook, Excel, SharePoint, Teams, and PowerPoint is also required"
+      },
+      {
+        "skill_name": "Microsoft PowerPoint",
+        "category": "Tool/System",
+        "proficiency_level": "Working",
+        "importance": "Important",
+        "evidence": "Proficiency in Outlook, Excel, SharePoint, Teams, and PowerPoint is also required"
+      }
+    ]
+  },
+  {
+    "job_ref_id": 31958,
+    "job_title": "Finance Lead",
+    "job_status": "CANCELLED",
+    "skills": [
+      {
+        "skill_name": "Financial Control & Integrity",
+        "category": "Technical",
+        "proficiency_level": "Expert",
+        "importance": "Core",
+        "evidence": "experience with controlling and assuring the integrity of financial data"
+      },
+      {
+        "skill_name": "Financial Planning & Budgeting",
+        "category": "Technical",
+        "proficiency_level": "Expert",
+        "importance": "Core",
+        "evidence": "Reviewing planning, budgeting and forecasting information"
+      },
+      {
+        "skill_name": "Financial Forecasting",
+        "category": "Technical",
+        "proficiency_level": "Practitioner",
+        "importance": "Core",
+        "evidence": "Reviewing planning, budgeting and forecasting information, you will ensure that the finance team delivers an effective output"
+      },
+      {
+        "skill_name": "Financial Reporting",
+        "category": "Technical",
+        "proficiency_level": "Expert",
+        "importance": "Core",
+        "evidence": "financial reporting service to the Station and Nuclear Decommissioning function"
+      },
+      {
+        "skill_name": "Audit & Control Reviews",
+        "category": "Technical",
+        "proficiency_level": "Practitioner",
+        "importance": "Core",
+        "evidence": "strong grasp of financial processes, control reviews, and audit activities"
+      },
+      {
+        "skill_name": "Risk Management",
+        "category": "Technical",
+        "proficiency_level": "Practitioner",
+        "importance": "Core",
+        "evidence": "proven track record in leading teams, managing risk, and negotiating effectively"
+      },
+      {
+        "skill_name": "Commercial Acumen",
+        "category": "Domain",
+        "proficiency_level": "Practitioner",
+        "importance": "Core",
+        "evidence": "demonstrating commercial acumen and strong analytical skills"
+      },
+      {
+        "skill_name": "Analytical Skills",
+        "category": "Soft",
+        "proficiency_level": "Practitioner",
+        "importance": "Core",
+        "evidence": "strong analytical skills"
+      },
+      {
+        "skill_name": "Stakeholder Engagement",
+        "category": "Soft",
+        "proficiency_level": "Practitioner",
+        "importance": "Core",
+        "evidence": "working with internal and external stakeholders to ensure the delivery of all financial objectives"
+      },
+      {
+        "skill_name": "Leadership & Team Management",
+        "category": "Soft",
+        "proficiency_level": "Practitioner",
+        "importance": "Core",
+        "evidence": "proven track record in leading teams...accountable for the development, qualification, and the performance of any direct reports"
+      },
+      {
+        "skill_name": "Communication & Presentation",
+        "category": "Soft",
+        "proficiency_level": "Practitioner",
+        "importance": "Core",
+        "evidence": "effective communication and presentation abilities for building relationships at all levels"
+      },
+      {
+        "skill_name": "Problem Solving",
+        "category": "Soft",
+        "proficiency_level": "Practitioner",
+        "importance": "Core",
+        "evidence": "demonstrate excellent problem-solving skills"
+      },
+      {
+        "skill_name": "Working Under Pressure",
+        "category": "Soft",
+        "proficiency_level": "Working",
+        "importance": "Important",
+        "evidence": "the ability to stay composed under pressure"
+      },
+      {
+        "skill_name": "Negotiation",
+        "category": "Soft",
+        "proficiency_level": "Practitioner",
+        "importance": "Important",
+        "evidence": "managing risk, and negotiating effectively"
+      },
+      {
+        "skill_name": "People Development & Wellbeing",
+        "category": "Soft",
+        "proficiency_level": "Working",
+        "importance": "Important",
+        "evidence": "supporting the team's development and individual wellbeing"
+      },
+      {
+        "skill_name": "Work Prioritisation",
+        "category": "Soft",
+        "proficiency_level": "Working",
+        "importance": "Important",
+        "evidence": "setting the standards, work prioritisation, supporting the team's development"
+      },
+      {
+        "skill_name": "Professional Accounting Qualification (ICAEW/ACCA/CIMA)",
+        "category": "Compliance/Regulatory",
+        "proficiency_level": "Practitioner",
+        "importance": "Core",
+        "evidence": "A qualified accountant (or studying towards a relevant qualification e.g. ICAEW, ACCA, CIMA)"
+      },
+      {
+        "skill_name": "Regulated Environment Finance",
+        "category": "Domain",
+        "proficiency_level": "Practitioner",
+        "importance": "Important",
+        "evidence": "significant financial experience is essential, preferably developed in a highly regulated environment"
+      },
+      {
+        "skill_name": "Nuclear Decommissioning & NDA Compliance",
+        "category": "Compliance/Regulatory",
+        "proficiency_level": "Awareness",
+        "importance": "Important",
+        "evidence": "meeting the external needs of the Nuclear Decommissioning Authority (NDA)"
+      },
+      {
+        "skill_name": "Power Plant Operations Knowledge",
+        "category": "Domain",
+        "proficiency_level": "Awareness",
+        "importance": "Nice to Have",
+        "evidence": "Knowledge of power plant operations will have an advantage"
+      },
+      {
+        "skill_name": "Budget Holder Liaison",
+        "category": "Soft",
+        "proficiency_level": "Working",
+        "importance": "Important",
+        "evidence": "Liaising with key station teams, including Group Heads, Budget Holders and Station Leadership team"
+      },
+      {
+        "skill_name": "Financial Performance Management",
+        "category": "Technical",
+        "proficiency_level": "Expert",
+        "importance": "Core",
+        "evidence": "facilitating the delivery of the financial performance of the station"
+      },
+      {
+        "skill_name": "Department Operations Management",
+        "category": "Domain",
+        "proficiency_level": "Practitioner",
+        "importance": "Core",
+        "evidence": "accountability for the functioning, effectiveness and productivity of the Dungeness B Finance Department"
+      },
+      {
+        "skill_name": "Security Vetting Compliance",
+        "category": "Compliance/Regulatory",
+        "proficiency_level": "Awareness",
+        "importance": "Core",
+        "evidence": "you will need to meet the criteria for Security Vetting which will, ordinarily, require you to have been a resident of the UK for 3 of the last 5 years"
+      }
+    ]
+  }
+]

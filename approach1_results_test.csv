@@ -1,0 +1,80 @@
+job_ref_id,job_title,job_status,skill_name,category,proficiency_level,importance,evidence
+31961,Customer Service Advisor,FILLED,Customer Service,Domain,Working,Core,"A passion for delivering great customer service — no experience needed, just a willingness to learn!"
+31961,Customer Service Advisor,FILLED,Verbal Communication,Soft,Working,Core,"Strong communication skills — you'll be speaking, listening, and writing with confidence."
+31961,Customer Service Advisor,FILLED,Written Communication,Soft,Working,Core,"Strong communication skills — you'll be speaking, listening, and writing with confidence."
+31961,Customer Service Advisor,FILLED,Active Listening,Soft,Working,Core,"you'll be speaking, listening, and writing with confidence."
+31961,Customer Service Advisor,FILLED,Problem Solving,Soft,Working,Core,A problem-solver who thrives in a fast-moving environment.
+31961,Customer Service Advisor,FILLED,Teamwork and Collaboration,Soft,Working,Core,A team player who's eager to support colleagues and share ideas.
+31961,Customer Service Advisor,FILLED,Multi-channel Customer Support,Domain,Working,Core,"Provide outstanding support to our customers via phone, email, LiveChat, and online portals."
+31961,Customer Service Advisor,FILLED,Query Resolution,Domain,Working,Core,"Take ownership of customer queries, resolving issues efficiently and professionally."
+31961,Customer Service Advisor,FILLED,IT Systems Proficiency,Technical,Awareness,Important,Comfortable using IT systems and navigating multiple platforms.
+31961,Customer Service Advisor,FILLED,Live Chat Support,Tool/System,Awareness,Important,"Provide outstanding support to our customers via phone, email, LiveChat, and online portals."
+31961,Customer Service Advisor,FILLED,Online Portal Navigation,Tool/System,Awareness,Important,Comfortable using IT systems and navigating multiple platforms.
+31961,Customer Service Advisor,FILLED,Continuous Improvement,Soft,Awareness,Important,Spot opportunities to improve customer experiences and suggest ways to make things better.
+31961,Customer Service Advisor,FILLED,Initiative and Ownership,Soft,Working,Core,"Take ownership of customer queries, resolving issues efficiently and professionally."
+31961,Customer Service Advisor,FILLED,Adaptability,Soft,Working,Important,A problem-solver who thrives in a fast-moving environment.
+31961,Customer Service Advisor,FILLED,Cross-functional Collaboration,Soft,Working,Important,Collaborate with colleagues across teams to find the best solutions.
+31961,Customer Service Advisor,FILLED,Energy Industry Knowledge,Domain,Awareness,Nice to Have,Be part of a company committed to sustainability and a greener future.
+31961,Customer Service Advisor,FILLED,Willingness to Learn,Soft,Awareness,Core,"no experience needed, just a willingness to learn!"
+31946,Field Engineer - CI/BOP,CANCELLED,Mechanical Engineering,Domain,Practitioner,Core,We are looking for a candidate with a Mechanical Engineering qualification or equivalent vocational training
+31946,Field Engineer - CI/BOP,CANCELLED,Turbine Assembly & Installation,Domain,Practitioner,Core,"significant industry experience, especially within turbines... assembly of turbines, generators, pumps, valves, and heat exchangers"
+31946,Field Engineer - CI/BOP,CANCELLED,Rotating Equipment Knowledge,Domain,Practitioner,Core,"construction, installation, and assembly of mechanical equipment, including static and rotating equipment"
+31946,Field Engineer - CI/BOP,CANCELLED,Welding Processes,Domain,Practitioner,Core,"individuals with welding qualifications and extensive hands-on experience will also be considered... piping, pipe supports, and welding processes"
+31946,Field Engineer - CI/BOP,CANCELLED,Pipework Installation,Domain,Practitioner,Core,"You will have knowledge of pipework installation, tank and vessel installation, steelwork erection"
+31946,Field Engineer - CI/BOP,CANCELLED,Tank and Vessel Installation,Domain,Working,Core,"knowledge of pipework installation, tank and vessel installation, steelwork erection"
+31946,Field Engineer - CI/BOP,CANCELLED,Steelwork Erection,Domain,Working,Core,"knowledge of pipework installation, tank and vessel installation, steelwork erection"
+31946,Field Engineer - CI/BOP,CANCELLED,HVAC Installation,Domain,Working,Important,"HVAC installation, and the assembly of turbines, generators, pumps, valves, and heat exchangers"
+31946,Field Engineer - CI/BOP,CANCELLED,Alignment Checks,Domain,Working,Important,"Additional expertise in alignment checks, torque control, joint integrity inspections"
+31946,Field Engineer - CI/BOP,CANCELLED,Torque Control,Domain,Working,Important,"Additional expertise in alignment checks, torque control, joint integrity inspections"
+31946,Field Engineer - CI/BOP,CANCELLED,Joint Integrity Inspections,Domain,Working,Important,"alignment checks, torque control, joint integrity inspections, and Foreign Material Exclusion (FME) processes is highly desirable"
+31946,Field Engineer - CI/BOP,CANCELLED,Foreign Material Exclusion (FME),Domain,Working,Important,Foreign Material Exclusion (FME) processes is highly desirable
+31946,Field Engineer - CI/BOP,CANCELLED,Quality Assurance / Quality Control (QA/QC),Domain,Practitioner,Core,"Familiarity with QA/QC procedures, including punch list inspections, NCRs, and ITPs, will be advantageous"
+31946,Field Engineer - CI/BOP,CANCELLED,Non-Conformance Reporting (NCR),Domain,Working,Core,assisting in the issuance of non-conformance reports when required
+31946,Field Engineer - CI/BOP,CANCELLED,Inspection Test Plans (ITP),Domain,Working,Important,"Familiarity with QA/QC procedures, including punch list inspections, NCRs, and ITPs"
+31946,Field Engineer - CI/BOP,CANCELLED,Punch List Inspections,Domain,Working,Important,"Familiarity with QA/QC procedures, including punch list inspections, NCRs, and ITPs"
+31946,Field Engineer - CI/BOP,CANCELLED,Quality Control Plans,Domain,Practitioner,Core,"maintaining a strong understanding of contractual technical requirements, construction drawings, Quality Control Plans, and Quality Inspection Records"
+31946,Field Engineer - CI/BOP,CANCELLED,Construction Surveillance,Domain,Practitioner,Core,monitor and oversee construction activities carried out by a contractor... ensure adherence to NNB's surveillance strategy requirements
+31946,Field Engineer - CI/BOP,CANCELLED,Construction Drawing Interpretation,Technical,Practitioner,Core,"maintaining a strong understanding of contractual technical requirements, construction drawings, Quality Control Plans"
+31946,Field Engineer - CI/BOP,CANCELLED,Health & Safety Compliance,Compliance/Regulatory,Practitioner,Core,"adherence to company policies, procedures, and protocols for construction, health & safety, and quality assurance"
+31946,Field Engineer - CI/BOP,CANCELLED,Environmental Standards Compliance,Compliance/Regulatory,Working,Core,"ensure all tasks meet health, safety, and environmental standards"
+31946,Field Engineer - CI/BOP,CANCELLED,ISO 9001,Compliance/Regulatory,Working,Important,"knowledge of key industry specifications such as BTS, BST, ISO9001, and GQAS"
+31946,Field Engineer - CI/BOP,CANCELLED,Nuclear Industry Standards (BTS/BST/GQAS),Compliance/Regulatory,Working,Important,"knowledge of key industry specifications such as BTS, BST, ISO9001, and GQAS"
+31946,Field Engineer - CI/BOP,CANCELLED,Materials Knowledge,Domain,Practitioner,Core,"A strong understanding of materials, trade methods, and legal requirements is essential"
+31946,Field Engineer - CI/BOP,CANCELLED,Legal & Regulatory Requirements Awareness,Compliance/Regulatory,Working,Core,"A strong understanding of materials, trade methods, and legal requirements is essential"
+31946,Field Engineer - CI/BOP,CANCELLED,Stakeholder Engagement,Soft,Practitioner,Core,Do you have excellent communication and stakeholder engagement skills... establish productive working relationships with contractors and stakeholders
+31946,Field Engineer - CI/BOP,CANCELLED,Communication,Soft,Practitioner,Core,The role requires excellent organisational and communication skills
+31946,Field Engineer - CI/BOP,CANCELLED,Organisational Skills,Soft,Practitioner,Core,The role requires excellent organisational and communication skills
+31946,Field Engineer - CI/BOP,CANCELLED,Attention to Detail,Soft,Practitioner,Core,"A keen attention to detail is necessary when inspecting work, equipment, and materials"
+31946,Field Engineer - CI/BOP,CANCELLED,Teamwork & Collaboration,Soft,Practitioner,Core,Must be able to work effectively within a high-performing team that consistently exceeds expectations
+31946,Field Engineer - CI/BOP,CANCELLED,Process Improvement,Soft,Working,Nice to Have,you will also have the opportunity to suggest improvements to existing processes to enhance overall project efficiency
+31946,Field Engineer - CI/BOP,CANCELLED,Reporting & Documentation,Technical,Working,Core,provide input on site-wide management issues... monitoring and reporting responsibilities
+31946,Field Engineer - CI/BOP,CANCELLED,Contractor Management,Domain,Working,Important,monitor and oversee construction activities carried out by a contractor... establish productive working relationships with contractors
+31946,Field Engineer - CI/BOP,CANCELLED,Microsoft Outlook,Tool/System,Working,Important,"Proficiency in Outlook, Excel, SharePoint, Teams, and PowerPoint is also required"
+31946,Field Engineer - CI/BOP,CANCELLED,Microsoft Excel,Tool/System,Working,Important,"Proficiency in Outlook, Excel, SharePoint, Teams, and PowerPoint is also required"
+31946,Field Engineer - CI/BOP,CANCELLED,Microsoft SharePoint,Tool/System,Working,Important,"Proficiency in Outlook, Excel, SharePoint, Teams, and PowerPoint is also required"
+31946,Field Engineer - CI/BOP,CANCELLED,Microsoft Teams,Tool/System,Working,Important,"Proficiency in Outlook, Excel, SharePoint, Teams, and PowerPoint is also required"
+31946,Field Engineer - CI/BOP,CANCELLED,Microsoft PowerPoint,Tool/System,Working,Important,"Proficiency in Outlook, Excel, SharePoint, Teams, and PowerPoint is also required"
+31958,Finance Lead,CANCELLED,Financial Control & Integrity,Technical,Expert,Core,experience with controlling and assuring the integrity of financial data
+31958,Finance Lead,CANCELLED,Financial Planning & Budgeting,Technical,Expert,Core,"Reviewing planning, budgeting and forecasting information"
+31958,Finance Lead,CANCELLED,Financial Forecasting,Technical,Practitioner,Core,"Reviewing planning, budgeting and forecasting information, you will ensure that the finance team delivers an effective output"
+31958,Finance Lead,CANCELLED,Financial Reporting,Technical,Expert,Core,financial reporting service to the Station and Nuclear Decommissioning function
+31958,Finance Lead,CANCELLED,Audit & Control Reviews,Technical,Practitioner,Core,"strong grasp of financial processes, control reviews, and audit activities"
+31958,Finance Lead,CANCELLED,Risk Management,Technical,Practitioner,Core,"proven track record in leading teams, managing risk, and negotiating effectively"
+31958,Finance Lead,CANCELLED,Commercial Acumen,Domain,Practitioner,Core,demonstrating commercial acumen and strong analytical skills
+31958,Finance Lead,CANCELLED,Analytical Skills,Soft,Practitioner,Core,strong analytical skills
+31958,Finance Lead,CANCELLED,Stakeholder Engagement,Soft,Practitioner,Core,working with internal and external stakeholders to ensure the delivery of all financial objectives
+31958,Finance Lead,CANCELLED,Leadership & Team Management,Soft,Practitioner,Core,"proven track record in leading teams...accountable for the development, qualification, and the performance of any direct reports"
+31958,Finance Lead,CANCELLED,Communication & Presentation,Soft,Practitioner,Core,effective communication and presentation abilities for building relationships at all levels
+31958,Finance Lead,CANCELLED,Problem Solving,Soft,Practitioner,Core,demonstrate excellent problem-solving skills
+31958,Finance Lead,CANCELLED,Working Under Pressure,Soft,Working,Important,the ability to stay composed under pressure
+31958,Finance Lead,CANCELLED,Negotiation,Soft,Practitioner,Important,"managing risk, and negotiating effectively"
+31958,Finance Lead,CANCELLED,People Development & Wellbeing,Soft,Working,Important,supporting the team's development and individual wellbeing
+31958,Finance Lead,CANCELLED,Work Prioritisation,Soft,Working,Important,"setting the standards, work prioritisation, supporting the team's development"
+31958,Finance Lead,CANCELLED,Professional Accounting Qualification (ICAEW/ACCA/CIMA),Compliance/Regulatory,Practitioner,Core,"A qualified accountant (or studying towards a relevant qualification e.g. ICAEW, ACCA, CIMA)"
+31958,Finance Lead,CANCELLED,Regulated Environment Finance,Domain,Practitioner,Important,"significant financial experience is essential, preferably developed in a highly regulated environment"
+31958,Finance Lead,CANCELLED,Nuclear Decommissioning & NDA Compliance,Compliance/Regulatory,Awareness,Important,meeting the external needs of the Nuclear Decommissioning Authority (NDA)
+31958,Finance Lead,CANCELLED,Power Plant Operations Knowledge,Domain,Awareness,Nice to Have,Knowledge of power plant operations will have an advantage
+31958,Finance Lead,CANCELLED,Budget Holder Liaison,Soft,Working,Important,"Liaising with key station teams, including Group Heads, Budget Holders and Station Leadership team"
+31958,Finance Lead,CANCELLED,Financial Performance Management,Technical,Expert,Core,facilitating the delivery of the financial performance of the station
+31958,Finance Lead,CANCELLED,Department Operations Management,Domain,Practitioner,Core,"accountability for the functioning, effectiveness and productivity of the Dungeness B Finance Department"
+31958,Finance Lead,CANCELLED,Security Vetting Compliance,Compliance/Regulatory,Awareness,Core,"you will need to meet the criteria for Security Vetting which will, ordinarily, require you to have been a resident of the UK for 3 of the last 5 years"
