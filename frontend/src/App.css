@@ -1,0 +1,280 @@
+/* ── Layout ─────────────────────────────────────── */
+.app {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* ── Header ─────────────────────────────────────── */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+.header-logo {
+  width: 44px;
+  height: 44px;
+  background: #0066cc;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 800;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+.header h1 {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #1a202c;
+  line-height: 1.2;
+}
+.header p {
+  font-size: 0.85rem;
+  color: #718096;
+  margin-top: 2px;
+}
+
+/* ── Card ────────────────────────────────────────── */
+.card {
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.08), 0 4px 16px rgba(0,0,0,.06);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+.card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.card-title::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 18px;
+  background: #0066cc;
+  border-radius: 2px;
+}
+
+/* ── Form ────────────────────────────────────────── */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+@media (max-width: 700px) {
+  .form-grid { grid-template-columns: 1fr; }
+}
+.field label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: #4a5568;
+  margin-bottom: .4rem;
+}
+.field input {
+  width: 100%;
+  padding: .55rem .75rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: .95rem;
+  color: #1a202c;
+  transition: border-color .2s;
+  outline: none;
+}
+.field input:focus {
+  border-color: #0066cc;
+  box-shadow: 0 0 0 3px rgba(0,102,204,.12);
+}
+.field-full label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: #4a5568;
+  margin-bottom: .4rem;
+}
+.field-full textarea {
+  width: 100%;
+  padding: .65rem .75rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: .9rem;
+  color: #1a202c;
+  resize: vertical;
+  min-height: 160px;
+  font-family: inherit;
+  line-height: 1.55;
+  transition: border-color .2s;
+  outline: none;
+}
+.field-full textarea:focus {
+  border-color: #0066cc;
+  box-shadow: 0 0 0 3px rgba(0,102,204,.12);
+}
+
+/* ── Button ──────────────────────────────────────── */
+.btn-extract {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin-top: 1.25rem;
+  padding: .7rem 1.75rem;
+  background: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 9px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s, transform .1s;
+}
+.btn-extract:hover:not(:disabled) { background: #0052a3; }
+.btn-extract:active:not(:disabled) { transform: scale(.98); }
+.btn-extract:disabled { background: #a0aec0; cursor: not-allowed; }
+
+/* ── Spinner ─────────────────────────────────────── */
+.spinner {
+  width: 18px; height: 18px;
+  border: 2.5px solid rgba(255,255,255,.4);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin .7s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Error ───────────────────────────────────────── */
+.error-box {
+  background: #fff5f5;
+  border: 1.5px solid #fc8181;
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  color: #c53030;
+  font-size: .9rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Results header ──────────────────────────────── */
+.result-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: .75rem;
+  margin-bottom: 1.5rem;
+}
+.meta-chip {
+  background: #ebf4ff;
+  border: 1px solid #bee3f8;
+  border-radius: 8px;
+  padding: .5rem .85rem;
+}
+.meta-chip .label {
+  font-size: .7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: #2b6cb0;
+}
+.meta-chip .value {
+  font-size: .9rem;
+  font-weight: 600;
+  color: #1a365d;
+  margin-top: 2px;
+}
+.seniority-badge {
+  display: inline-block;
+  padding: .2rem .65rem;
+  border-radius: 20px;
+  font-size: .75rem;
+  font-weight: 700;
+  background: #c6f6d5;
+  color: #22543d;
+}
+
+/* ── Skills count banner ─────────────────────────── */
+.skills-count {
+  font-size: .85rem;
+  color: #4a5568;
+  margin-bottom .75rem;
+}
+
+/* ── Skills table ────────────────────────────────── */
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .88rem;
+}
+thead tr {
+  background: #f7fafc;
+}
+th {
+  padding: .65rem 1rem;
+  text-align: left;
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: #4a5568;
+  border-bottom: 1.5px solid #e2e8f0;
+  white-space: nowrap;
+}
+td {
+  padding: .65rem 1rem;
+  border-bottom: 1px solid #edf2f7;
+  vertical-align: top;
+  color: #2d3748;
+}
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: #f7fafc; }
+
+/* ── Proficiency pill ────────────────────────────── */
+.prof {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  font-weight: 700;
+  font-size: .82rem;
+  padding: .22rem .6rem;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.prof-1 { background:#e9d8fd; color:#553c9a; }
+.prof-2 { background:#bee3f8; color:#2c5282; }
+.prof-3 { background:#c6f6d5; color:#22543d; }
+.prof-4 { background:#feebc8; color:#7b341e; }
+.prof-5 { background:#fed7d7; color:#742a2a; }
+
+/* ── Category tag ────────────────────────────────── */
+.cat-tag {
+  display: inline-block;
+  background: #edf2f7;
+  color: #4a5568;
+  border-radius: 6px;
+  padding: .15rem .5rem;
+  font-size: .78rem;
+  font-weight: 500;
+}
+
+/* ── Evidence text ───────────────────────────────── */
+.evidence {
+  font-style: italic;
+  color: #718096;
+  font-size: .82rem;
+}
