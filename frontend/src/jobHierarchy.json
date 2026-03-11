@@ -1,0 +1,392 @@
+{
+  "Communications (64013439)": {
+    "Customers & Corporate & Digital Comms": [
+      "Customer Internal Communications (65017955)"
+    ],
+    "Brand PR And Advocacy": [
+      "NA-NULL (NA)"
+    ],
+    "Media Relations": [
+      "NA-NULL (NA)"
+    ],
+    "Generation Communications": [
+      "Internal Communications (65017967)"
+    ],
+    "CPO": [
+      "NA-NULL (NA)"
+    ],
+    "Net Zero Strategy & Policy": [
+      "Public Affairs (65017940)"
+    ]
+  },
+  "Customers (64013735)": {
+    "EDF Business & Wholesale Services": [
+      "CSP (65010024)",
+      "Core Services & Metering (65010018)",
+      "Financial Control & Reporting (64016061)",
+      "Large Business (65010006)",
+      "Mid Market (65010009)",
+      "PPA (65010012)",
+      "Portfolio Operations (64016011)",
+      "Short Term Trading Services (64011681)",
+      "Strategy Performance & Insight (65015822)",
+      "Strategy and Performance (65010021)",
+      "WMS Commercial (65003876)",
+      "WMS Tech (65003872)"
+    ],
+    "Retail": [
+      "Commercial & Performance (65011814)",
+      "Resi Ops Complex (65012778)",
+      "Residential Operations (65011354)",
+      "Retail Revenue Operations (65013004)",
+      "Sales And Marketing (64023436)",
+      "Small Business (65012775)",
+      "Smart Metering Install (64007160)",
+      "Solutions & Automations (65011817)"
+    ],
+    "Customers Finance": [
+      "Financial Control & Reporting (64016061)",
+      "Retail & Zero Carbon Homes (50076909)",
+      "Supply Chain (65011771)",
+      "WMS & EBS (64016059)"
+    ],
+    "Business Development": [
+      "Zero Carbon Homes (65006101)"
+    ],
+    "Financial Control and Shared Services": [
+      "Finance Shared Services (65019010)",
+      "Financial Control & Reporting (64016061)"
+    ],
+    "HR": [
+      "People-Business Development (65016963)",
+      "People-Cust & Corp Finance (65011616)",
+      "People-EBS-PX-Data (65004571)",
+      "People-Retail (65016036)"
+    ],
+    "Enterprise IT": [
+      "Portfolio & Enterprise Applications (64013961)"
+    ],
+    "Wholesale Market Services": [
+      "WMS Tech (65003872)"
+    ]
+  },
+  "EDF ER (64012137)": {
+    "CPO": [
+      "HRBPs (65005544)",
+      "HSE (65005371)",
+      "HSQE (65005560)"
+    ],
+    "CTO": [
+      "Electricity Connections (65010801)",
+      "Engineering (64021822)",
+      "OTC (65013462)",
+      "Onshore Delivery (65022383)",
+      "PMO (65013468)",
+      "Procurement (65013465)",
+      "Solar & Storage Delivery (64024803)"
+    ],
+    "Asset Operations": [
+      "Commercial & Supply Chain (65005347)",
+      "NA-NULL (NA)",
+      "Offshore AO (65005338)",
+      "Onshore AO (65005935)",
+      "Performance & Optimisation (65005335)",
+      "Solar & Storage AO (65005341)",
+      "Technical Service & Delivery (65011418)"
+    ],
+    "Solar Storage & Private Wire": [
+      "Origination & Planning (65004404)",
+      "Solar (65004133)"
+    ],
+    "Finance": [
+      "Business Improvement (65002630)",
+      "Finance - Group (65006221)",
+      "Finance - Offshore & Ireland (65002440)",
+      "Finance - Solar, Storage & Private Wire (64012311)",
+      "IT & Digital (65015192)"
+    ],
+    "Offshore & Ireland": [
+      "Consent (65012364)",
+      "Ireland Development (65005253)"
+    ],
+    "SAS Energy": [
+      "C&I (65010797)",
+      "Construction (65019202)",
+      "NA-NULL (NA)"
+    ],
+    "Strategy and Analysis": [
+      "Investment Analysis & Valuation (65006209)",
+      "NA-NULL (NA)",
+      "Origination (65013559)"
+    ],
+    "Legal": [
+      "Legal - Offshore Wind (64026863)"
+    ]
+  },
+  "Finance (64000306)": {
+    "Financial Control and Shared Services": [
+      "Finance Shared Services (65019010)",
+      "Financial Reporting & Transformation (65004804)",
+      "NA-NULL (NA)",
+      "Treasury (64000429)"
+    ],
+    "Net Zero Strategy & Policy": [
+      "Corporate Strategy (65012462)",
+      "NA-NULL (NA)",
+      "Strategic and Emerging Markets P&R (65006173)"
+    ],
+    "Tax": [
+      "Direct Tax (64000448)"
+    ]
+  },
+  "Governance & Legal Affairs (64013919)": {
+    "NNB Legal": [
+      "EPRP Legal Construction (65003375)"
+    ],
+    "Nuclear Operations Legal": [
+      "Nuclear Operations Legal â€“ Nuclear (65001285)"
+    ],
+    "Corporate and Customers Legal Counsel": [
+      "NA-NULL (NA)"
+    ],
+    "Internal Audit, Risk & Control": [
+      "NA-NULL (NA)"
+    ],
+    "Compliance Assistance & Response": [
+      "NA-NULL (NA)"
+    ]
+  },
+  "HR (64000307)": {
+    "Enterprise IT": [
+      "EIT Commercial Strategy & Performance (65018193)",
+      "Enterprise Architecture (64022147)",
+      "Enterprise Information Security (64022145)",
+      "Enterprise Technology (65004253)",
+      "Portfolio & Enterprise Applications (64013961)",
+      "Service Management (65015627)"
+    ],
+    "People Services & Innovation": [
+      "Employee Services (65002273)",
+      "Nuclear Resourcing (65006164)",
+      "Recruitment Services (65021121)"
+    ],
+    "Health and Safety": [
+      "Customer & Corporate H&S & Wellbeing (65016630)",
+      "Facilities Services (64006668)",
+      "Land & Estates Management (64006669)",
+      "Occupational Health (65019616)"
+    ],
+    "People Development": [
+      "Digital Innovative Learning (65003049)",
+      "Learning Resources & Governance (65003051)"
+    ],
+    "Industrial Relations & Reward": [
+      "Reward Team (64024863)"
+    ]
+  },
+  "Hinkley Point C (64016762)": {
+    "HPC Technical Directorate": [
+      "NA-NULL (NA)",
+      "Quality (65012931)",
+      "TD Commercial (65015929)",
+      "Technical Client Programme (65005472)",
+      "Technical Construction Programme (64024795)"
+    ],
+    "Finance-Investments": [
+      "Finance (65002228)",
+      "HPC Communications (65020611)"
+    ],
+    "Project Delivery": [
+      "Alliance (65017824)",
+      "BNI, BoP, NSSS & HVAC (65017818)",
+      "CI & BoP Area (64016566)",
+      "Commissioning Programme (65001458)",
+      "Construction Health & Safety (65012901)",
+      "Construction: CI & BoP (65012889)",
+      "Construction: NI (65012895)",
+      "Delivery (65020355)",
+      "HPC Employment Affairs Unit (65018204)",
+      "I&C Programme (65012883)",
+      "MEH NSSS (65018234)",
+      "MEH Programme (65020352)",
+      "Main Civils Works (65012886)",
+      "NA-NULL (NA)",
+      "NSSS (65018995)",
+      "PMO (65012913)",
+      "Project Construction (65020361)",
+      "Site Environment & Resilience (65012904)",
+      "Site Performance Improvement (65015181)",
+      "Transverse Equipment 2 (65018992)",
+      "Turbine Programme (65002793)"
+    ],
+    "EPR Engineering": [
+      "CFO (65013266)",
+      "Edvance (65011731)"
+    ],
+    "HPC Nuclear Operations": [
+      "Commissioning Programme (65001458)",
+      "Pre Operations (65002075)"
+    ],
+    "Supply Chain": [
+      "CI & Equipment (64024689)",
+      "CI/BoP/Turbine (65015337)",
+      "Commercial Main Civils Works (65001602)",
+      "MEH (64016709)",
+      "NI, Pre-Operations & Commissioning (65006829)",
+      "Supplier Relations & Assurance (64025942)"
+    ],
+    "Safety & Schedule Assurance": [
+      "Business Management & Governance (65009195)",
+      "EPR Digital Services (65012928)",
+      "Health, Safety & Environment (65018943)",
+      "Internal Nuclear Regulation (65018937)",
+      "Risk (65020485)",
+      "Site Nuclear Compliance (65012898)"
+    ],
+    "People Services & Innovation": [
+      "Nuclear Resourcing (65006164)"
+    ],
+    "Human Resources": [
+      "Expats (65005263)",
+      "HPC Project Delivery (64016579)",
+      "Organisational Capability (64016580)"
+    ],
+    "Project Support": [
+      "SDC (65013646)",
+      "Site (65013649)"
+    ]
+  },
+  "Nuclear Development (64026850)": {
+    "SZC Project": [
+      "Corporate Operations (65017411)",
+      "Delivery (65012577)",
+      "Human Resources (65012592)",
+      "Pre-Ops (65016785)",
+      "SZC Supply Chain (65012586)",
+      "SZC Technical Directorate (65016093)",
+      "Safety, Security and Assurance (65012583)"
+    ],
+    "Financing": [
+      "Corporate Operations (65017411)",
+      "Economic Regulation (65004775)",
+      "Energy Strategy (65019379)",
+      "Human Resources (65012592)",
+      "Legal (65014049)",
+      "Regional External Affairs & Development (65007309)",
+      "SZC Finance (65012589)",
+      "Treasury Function (65016537)"
+    ],
+    "NA-NULL": [
+      "NA-NULL (NA)"
+    ]
+  },
+  "Nuclear Operations (83008354)": {
+    "Nuclear Operations": [
+      "DNB Power Station (65016914)",
+      "HAR Power Station (65016917)",
+      "HNB Power Station (65016908)",
+      "HPB Power Station (65016911)",
+      "HYA Power Station (65016920)",
+      "HYB Power Station (65016923)",
+      "Occupational Health (65019616)",
+      "SZB Power Station (65016926)",
+      "TOR Power Station (65016929)"
+    ],
+    "Finance, IT Services and Commercial": [
+      "FIN Finance (83008880)",
+      "FIN Nuclear IT Services (83009115)",
+      "FIN Supply Chain (64025852)",
+      "Finance (64025543)"
+    ],
+    "S&A Safety & Assurance": [
+      "Independent Nuclear Assurance (83008217)",
+      "Regulatory Interface and External Oversight (83004034)",
+      "S&A HS & ES (64021824)"
+    ],
+    "Nuclear Decommissioning": [
+      "CTO Lifetime & Transition (65012846)",
+      "Client Organisation (65006838)",
+      "Integrated Work Programme (65016820)",
+      "NA-NULL (NA)",
+      "Prep Programme (65012849)",
+      "Transfer and Deconstruction (65006948)"
+    ],
+    "Operations Support Directorate": [
+      "Central Projects & Performance (65015386)",
+      "Operational Strategy & Insights (65019213)",
+      "Operations & Assurance Support (65012852)"
+    ],
+    "Human Resources": [
+      "HR Central Functions (83009148)",
+      "Nuclear Skills Alliance (65003968)",
+      "Operations HR (65005302)"
+    ],
+    "Technical Directorate": [
+      "AGR Lifetime Programme (65015377)",
+      "Design Authority (65015374)",
+      "Operational Focus & Delivery Assurance (65015389)"
+    ],
+    "Health and Safety": [
+      "Occupational Health (65019616)",
+      "S&A HS & ES (64021824)"
+    ]
+  },
+  "Nuclear Services (65005014)": {
+    "Engineering": [
+      "Civils (65005042)",
+      "Electrical (65005039)",
+      "Instrumentation & Control (65005051)",
+      "Mech Nuclear & Conventional Systems (65005045)",
+      "Mech Pressure & Rotating Systems (65005036)"
+    ],
+    "Structural Integrity": [
+      "Inspection (65015368)",
+      "Materials, Chemistry & Welding (65015365)",
+      "Structural Analysis (65015361)"
+    ],
+    "Nuclear Security": [
+      "Cyber Security & Information Assurance (65006414)",
+      "Personnel Security (65006417)",
+      "Security Design (65006411)",
+      "Security Service Delivery (65012797)"
+    ],
+    "Business & Commercial": [
+      "Business Governance & Controls (65007119)",
+      "NA-NULL (NA)",
+      "Nuclear Services Finance (65015842)"
+    ],
+    "Nuclear Analysis": [
+      "Export Controls & Sanctions (65016462)",
+      "Fuel & Core (65005027)",
+      "Human Factors (65007686)",
+      "Safety Studies (65005033)"
+    ],
+    "NA-NULL": [
+      "NA-NULL (NA)",
+      "Nuclear Safety & Quality (65010372)"
+    ],
+    "Human Resources": [
+      "NA-NULL (NA)"
+    ]
+  },
+  "Research & Development (65017833)": {
+    "R&D Nuclear": [
+      "NA-NULL (NA)",
+      "Natural Hazards (65017907)",
+      "Nuclear (65017904)",
+      "R&D Nuclear - Fuel & Reactor Physics (65017919)"
+    ],
+    "R&D Renewables": [
+      "NA-NULL (NA)",
+      "R&D Renewables Development (65019965)"
+    ],
+    "R&D Future Energy Systems": [
+      "Net Zero Hub (65017901)",
+      "Smart Energy Applications (65017898)",
+      "Smart Energy Systems (65017895)"
+    ],
+    "R&D Digital Innovation": [
+      "NA-NULL (NA)"
+    ]
+  }
+}

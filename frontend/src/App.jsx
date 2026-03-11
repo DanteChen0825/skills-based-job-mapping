@@ -1,5 +1,7 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import axios from 'axios'
+import Combobox from './Combobox'
+import hierarchy from './jobHierarchy.json'
 import './App.css'
 
 const PROF_LABELS = {
@@ -58,8 +60,26 @@ function App() {
   const [result, setResult]   = useState(null)
   const [error, setError]     = useState(null)
 
-  const handleChange = (e) =>
-    setForm((f) => ({ ...f, [e.target.name]: e.target.value }))
+  // Derived option lists — cascade on selection
+  const buOptions  = useMemo(() => Object.keys(hierarchy).sort(), [])
+  const fnOptions  = useMemo(() => {
+    const fns = hierarchy[form.business_unit]
+    return fns ? Object.keys(fns).sort() : []
+  }, [form.business_unit])
+  const sfOptions  = useMemo(() => {
+    const fns = hierarchy[form.business_unit]
+    return fns?.[form.function] ?? []
+  }, [form.business_unit, form.function])
+
+  const setField = (name, value) => {
+    setForm((f) => {
+      const next = { ...f, [name]: value }
+      // Cascade resets
+      if (name === 'business_unit') { next.function = ''; next.sub_function = '' }
+      if (name === 'function')      { next.sub_function = '' }
+      return next
+    })
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -96,33 +116,29 @@ function App() {
         <div className="card-title">Job Record</div>
         <form onSubmit={handleSubmit}>
           <div className="form-grid">
-            <div className="field">
-              <label>Business Unit</label>
-              <input
-                name="business_unit"
-                placeholder="e.g. Customers (64013735)"
-                value={form.business_unit}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="field">
-              <label>Function</label>
-              <input
-                name="function"
-                placeholder="e.g. Retail"
-                value={form.function}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="field">
-              <label>Sub-function</label>
-              <input
-                name="sub_function"
-                placeholder="e.g. Smart Metering Install"
-                value={form.sub_function}
-                onChange={handleChange}
-              />
-            </div>
+            <Combobox
+              label="Business Unit"
+              options={buOptions}
+              value={form.business_unit}
+              onChange={(v) => setField('business_unit', v)}
+              placeholder="Type or select…"
+            />
+            <Combobox
+              label="Function"
+              options={fnOptions}
+              value={form.function}
+              onChange={(v) => setField('function', v)}
+              placeholder="Type or select…"
+              disabled={!form.business_unit}
+            />
+            <Combobox
+              label="Sub-function"
+              options={sfOptions}
+              value={form.sub_function}
+              onChange={(v) => setField('sub_function', v)}
+              placeholder="Type or select…"
+              disabled={!form.function}
+            />
           </div>
           <div className="field-full">
             <label>Job Description *</label>
@@ -130,7 +146,7 @@ function App() {
               name="job_description"
               placeholder="Paste the full job advertisement text here…"
               value={form.job_description}
-              onChange={handleChange}
+              onChange={(e) => setField('job_description', e.target.value)}
               required
             />
           </div>
